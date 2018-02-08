@@ -30,6 +30,12 @@
             android:summary="@string/show_cpu_summary"
             android:defaultValue="false" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="pocket_judge"
+        android:title="@string/pocket_judge_title"
+        android:summary="@string/pocket_judge_summary"
+        android:defaultValue="false" />
+
         <!-- Keyboard -->
         <PreferenceCategory
             android:key="input_settings"
