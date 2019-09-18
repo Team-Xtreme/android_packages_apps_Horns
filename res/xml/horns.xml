@@ -42,7 +42,7 @@
         <Preference
             android:key="buttonsettings_category"
             android:title="@string/button_title"
-            android:fragment="com.stag.horns.fragments.ButtonSettings"
+            android:fragment="com.stag.horns.fragments.ButtonsSettings"
             android:icon="@drawable/ic_settings_buttons"/>
 
         <!-- Navigation Bar -->
