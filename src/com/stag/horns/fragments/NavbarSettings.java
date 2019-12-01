@@ -47,9 +47,13 @@ public class NavbarSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
+    private static final String NAV_BAR_LAYOUT = "nav_bar_layout";
+    private static final String SYSUI_NAV_BAR = "sysui_nav_bar";
 
+    private ListPreference mNavBarLayout;
     private SwitchPreference mEnableNavigationBar;
     private boolean mIsNavSwitchingMode = false;
+    private ContentResolver mResolver;
     private Handler mHandler;
 
     @Override
@@ -58,6 +62,7 @@ public class NavbarSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.horns_navigation);
         final PreferenceScreen prefScreen = getPreferenceScreen();
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.recents_style_info_title);
+        mResolver = getActivity().getContentResolver();
 
         // Navigation bar related options
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
@@ -69,6 +74,15 @@ public class NavbarSettings extends SettingsPreferenceFragment
             updateNavBarOption();
         } else {
             prefScreen.removePreference(mEnableNavigationBar);
+        }
+
+        mNavBarLayout = (ListPreference) findPreference(NAV_BAR_LAYOUT);
+        mNavBarLayout.setOnPreferenceChangeListener(this);
+        String navBarLayoutValue = Settings.Secure.getString(mResolver, SYSUI_NAV_BAR);
+        if (navBarLayoutValue != null) {
+            mNavBarLayout.setValue(navBarLayoutValue);
+        } else {
+            mNavBarLayout.setValueIndex(0);
         }
     }
 
@@ -91,6 +105,9 @@ public class NavbarSettings extends SettingsPreferenceFragment
                     mIsNavSwitchingMode = false;
                 }
             }, 1000);
+            return true;
+        } else if (preference == mNavBarLayout) {
+            Settings.Secure.putString(mResolver, SYSUI_NAV_BAR, (String) newValue);
             return true;
         }
         return false;
