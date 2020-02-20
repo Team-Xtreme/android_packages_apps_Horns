@@ -2,8 +2,12 @@ package com.stag.horns.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.content.Intent;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
@@ -23,14 +27,21 @@ import com.android.settings.R;
 import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
+import android.text.format.DateFormat;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
+import com.stag.horns.preferences.SystemSettingSeekBarPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
 import android.util.Log;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Date;
+import java.util.Set;
 import java.util.HashMap;
 import java.util.Collections;
 
