@@ -366,7 +366,7 @@
     <string name="powermenu_logout">Logout</string>
 
     <!-- Battery Styles -->
-    <string name="battery_category_title">Battery</string>
+    <string name="battery_style_category_title">Battery</string>
     <string name="battery_percent_title">Battery percent</string>
 
     <!-- Status bar - Battery -->

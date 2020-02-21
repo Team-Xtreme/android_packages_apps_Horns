@@ -25,6 +25,7 @@ import android.content.ContentResolver;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.preference.SwitchPreference;
@@ -32,8 +33,6 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import com.stag.horns.preferences.SystemSettingSeekBarPreference;
 
 import android.provider.Settings;
 import com.android.settings.R;
@@ -61,7 +60,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
-        }
 
     }
 
