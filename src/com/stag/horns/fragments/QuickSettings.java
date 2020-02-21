@@ -28,6 +28,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
+import com.stag.horns.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
