@@ -18,7 +18,7 @@
  * key is identical to the target ConfigMap tag in ActionConstants 
  */
 
-package com.ion.ionizer.preferences;
+package com.stag.horns.preferences;
 
 import java.util.Map;
 

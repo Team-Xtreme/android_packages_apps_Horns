@@ -17,7 +17,7 @@
  * class that holds target widget state
  */
 
-package com.ion.ionizer.preferences;
+package com.stag.horns.preferences;
 
 import java.util.ArrayList;
 
@@ -28,9 +28,9 @@ import com.android.internal.util.hwkeys.Config;
 import com.android.internal.util.hwkeys.Config.ActionConfig;
 import com.android.internal.util.hwkeys.Config.ButtonConfig;
 
-import com.ion.ionizer.preferences.ShortcutPickHelper;
-import com.ion.ionizer.preferences.ActionPreference;
-import com.ion.ionizer.preferences.CustomActionListAdapter;
+import com.stag.horns.preferences.ShortcutPickHelper;
+import com.stag.horns.preferences.ActionPreference;
+import com.stag.horns.preferences.CustomActionListAdapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -165,7 +165,7 @@ public class ActionFragment extends SettingsPreferenceFragment implements
         switch (dialogId) {
             case DIALOG_CATEGORY:
             case DIALOG_CUSTOM_ACTIONS:
-                return MetricsEvent.ION_IONIZER;
+                return MetricsEvent.HORNS;
             default:
                 return 0;
         }
@@ -256,6 +256,6 @@ public class ActionFragment extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ION_IONIZER;
+        return MetricsProto.MetricsEvent.HORNS;
     }
 }

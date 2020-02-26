@@ -50,6 +50,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.horns_statusbar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
         mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),

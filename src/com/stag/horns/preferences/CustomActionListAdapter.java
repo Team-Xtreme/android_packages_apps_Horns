@@ -16,7 +16,7 @@
  * Adapter for displaying custom actions in a list
  */
 
-package com.ion.ionizer.preferences;
+package com.stag.horns.preferences;
 
 import java.util.ArrayList;
 import java.util.List;

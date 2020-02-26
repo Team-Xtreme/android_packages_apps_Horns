@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ion.ionizer.preferences;
+package com.stag.horns.preferences;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.ion.ionizer.preferences.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.stag.horns.preferences.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 
