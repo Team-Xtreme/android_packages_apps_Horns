@@ -42,7 +42,7 @@
         android:entries="@array/nav_bar_layouts"
         android:entryValues="@array/nav_bar_layouts_values" />
 
-    <com.ion.ionizer.preferences.SecureSettingSwitchPreference
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="sysui_nav_bar_inverse"
         android:title="@string/navbar_invert_layout_title"
         android:defaultValue="false" />

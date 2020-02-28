@@ -25,6 +25,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
+import com.stag.horns.preferences.SecureSettingSwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -36,6 +37,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class Visualizer extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String KEY_AMBIENT_VIS = "ambient_visualizer_enabled";
     private static final String KEY_AUTOCOLOR = "lockscreen_visualizer_autocolor";
     private static final String KEY_LAVALAMP = "lockscreen_lavalamp_enabled";
     private static final String KEY_COLOR = "lockscreen_visualizer_color";
@@ -45,6 +47,7 @@ public class Visualizer extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoColor;
     private SwitchPreference mLavaLamp;
     private ColorPickerPreference mColor;
+    private SecureSettingSwitchPreference mAmbientVisualizer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,7 @@ public class Visualizer extends SettingsPreferenceFragment implements
         String hexColor = String.format("#%08x", (DEFAULT_COLOR & intColor));
         mColor.setSummary(hexColor);
         mColor.setNewPreviewColor(intColor);
+
     }
 
     @Override

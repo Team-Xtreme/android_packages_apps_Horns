@@ -41,25 +41,17 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.horns_misc);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mSmartPixelsEnabled = (SystemSettingMasterSwitchPreference) findPreference(SMART_PIXELS_ENABLED);
-        mSmartPixelsEnabled.setOnPreferenceChangeListener(this);
-        int smartPixelsEnabled = Settings.System.getInt(getContentResolver(),
-                SMART_PIXELS_ENABLED, 0);
-        mSmartPixelsEnabled.setChecked(smartPixelsEnabled != 0);
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
-            getPreferenceScreen().removePreference(mSmartPixelsEnabled);
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+        if (!enableSmartPixels){
+            getPreferenceScreen().removePreference(SmartPixels);
         }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mSmartPixelsEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-		            SMART_PIXELS_ENABLED, value ? 1 : 0);
-            return true;
-        }
+
         return false;
     }
 
