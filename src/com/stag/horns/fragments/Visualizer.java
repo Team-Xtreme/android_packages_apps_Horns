@@ -31,7 +31,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Visualizer extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
