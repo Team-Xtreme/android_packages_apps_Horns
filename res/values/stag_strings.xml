@@ -95,6 +95,9 @@
     <string name="recents_style_info_title">Only valid if button navigation mode is used.</string>
     <string name="navbar_visibility">Allow navigation bar</string>
 
+    <string name="nav_bar_tuner_title">Navigation bar tuner</string>
+    <string name="nav_bar_tuner_summary">Edit your nav bar</string>
+
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
